@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Albo d'Oro</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    background:#0b0b0b;
+    color:#fff;
+    font-family:'Rajdhani', sans-serif;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:60px 40px;
+}
+
+h1{
+    text-align:center;
+    font-size:42px;
+    letter-spacing:4px;
+    margin-bottom:50px;
+}
+
+.albo-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+    gap:30px;
+}
+
+/* CARD */
+.albo-card{
+    background:#111;
+    border:2px solid #e10600;
+    padding:25px;
+    position:relative;
+}
+
+.albo-card::before{
+    content:"PRO";
+    position:absolute;
+    top:-12px;
+    right:15px;
+    background:#e10600;
+    padding:4px 10px;
+    font-size:12px;
+    font-weight:700;
+}
+
+.stagione{
+    font-size:20px;
+    color:#e10600;
+    margin-bottom:10px;
+}
+
+.campionato{
+    font-size:18px;
+    margin-bottom:20px;
+}
+
+.vincitore{
+    font-size:22px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.team{
+    font-size:16px;
+    opacity:0.85;
+    margin-bottom:10px;
+}
+
+.auto{
+    font-size:14px;
+    opacity:0.7;
+}
+
+.podio{
+    margin-top:20px;
+    border-top:1px solid #222;
+    padding-top:15px;
+}
+
+.podio span{
+    display:block;
+    font-size:14px;
+    margin-bottom:5px;
+}
+
+footer{
+    text-align:center;
+    margin-top:80px;
+    opacity:0.4;
+    font-size:12px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>ALBO D’ORO</h1>
+
+<div class="albo-grid">
+
+    <!-- STAGIONE -->
+    <div class="albo-card">
+        <div class="stagione">Stagione 2026</div>
+        <div class="campionato">GT7 PAD LEAGUE – WORLD CUP</div>
+
+        <div class="vincitore">🏆 DriverPSN</div>
+        <div class="team">GTDrivers Racing ITA</div>
+        <div class="auto">Toyota GR Supra DTM</div>
+
+        <div class="podio">
+            <span>🥈 SpeedRacer</span>
+            <span>🥉 PodMaster</span>
+        </div>
+    </div>
+
+    <!-- STAGIONE -->
+    <div class="albo-card">
+        <div class="stagione">Stagione 2025</div>
+        <div class="campionato">Campionato Italiano GT7</div>
+
+        <div class="vincitore">🏆 FastLane</div>
+        <div class="team">Carbon Racing ENG</div>
+        <div class="auto">BMW M4 DTM</div>
+
+        <div class="podio">
+            <span>🥈 NightWolf</span>
+            <span>🥉 ApexKing</span>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+GT7 PAD LEAGUE – Archivio ufficiale dei campioni
+</footer>
+
+</div>
+
+</body>
+</html>

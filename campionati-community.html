@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campionati Minori</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Rajdhani',sans-serif;
+background:#0b0b0b;
+color:white;
+}
+
+header{
+text-align:center;
+padding:50px;
+background:black;
+border-bottom:3px solid #e10600;
+}
+
+h1{
+letter-spacing:5px;
+font-size:42px;
+}
+
+.container{
+width:90%;
+margin:60px auto;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.card{
+background:linear-gradient(180deg,#1a1a1a,#111);
+border-radius:12px;
+overflow:hidden;
+text-decoration:none;
+color:white;
+border:1px solid #222;
+transition:.25s;
+}
+
+.card:hover{
+transform:translateY(-8px) scale(1.02);
+box-shadow:0 0 20px rgba(225,6,0,0.6);
+}
+
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+filter:brightness(.75);
+transition:.3s;
+}
+
+.card:hover img{
+filter:brightness(1);
+transform:scale(1.05);
+}
+
+.card-content{
+padding:20px;
+}
+
+.card h2{
+margin:0 0 10px 0;
+letter-spacing:2px;
+}
+
+.card p{
+opacity:.7;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>CAMPIONATI MINORI</h1>
+<p>Serie ufficiali community GT7 PAD League</p>
+</header>
+
+<div class="container">
+
+<div class="grid">
+
+<a href="campionato-wec.html" class="card">
+<img src="immagini/wec.jgp.jpg">
+<div class="card-content">
+<h2>Campionato WEC</h2>
+<p>Endurance multi-classe ispirato al FIA World Endurance Championship.</p>
+</div>
+</a>
+
+<a href="campionato-gt4.html" class="card">
+<img src="immagini/gt4.jpg">
+<div class="card-content">
+<h2>Campionato GT4</h2>
+<p>Serie sprint con vetture GT4 bilanciate e gare ad alta competitività.</p>
+</div>
+</a>
+
+<a href="campionato-dtm.html" class="card">
+<img src="immagini/DTM.png">
+<div class="card-content">
+<h2>Campionato DTM</h2>
+<p>Campionato turismo ad alte prestazioni con format professionale.</p>
+</div>
+</a>
+
+<a href="derivate-serie.html" class="card">
+<img src="immagini/ders.jpg">
+<div class="card-content">
+<h2>Campionato Derivate di Serie</h2>
+<p>Competizioni con vetture stradali preparate e regolamenti accessibili.</p>
+</div>
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>

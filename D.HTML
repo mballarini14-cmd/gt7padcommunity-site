@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Divisione D</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+
+<style>
+body{margin:0;font-family:Arial;color:white;background:url("https://www.transparenttextures.com/patterns/carbon-fibre.png"),#05070b;overflow-x:hidden;}
+body::before{content:"";position:fixed;top:0;left:-50%;width:200%;height:6px;background:linear-gradient(90deg,transparent,#ff0000,transparent);animation:ledmove 2s linear infinite;}
+@keyframes ledmove{from{left:-50%}to{left:100%}}
+
+h1{text-align:center;letter-spacing:6px;padding:25px;font-size:42px;font-family:'Orbitron',sans-serif;}
+
+#podio{display:flex;justify-content:center;align-items:flex-end;gap:60px;margin-top:60px;}
+
+.podioBox{width:260px;text-align:center;border-radius:18px;background:rgba(0,0,0,0.6);background-image:url("https://www.transparenttextures.com/patterns/carbon-fibre.png");box-shadow:0 0 30px rgba(255,0,0,0.6);opacity:0;transform:translateY(120px) scale(.9);animation:enter 1s forwards;}
+.podioBox:nth-child(2){animation-delay:.3s}
+.podioBox:nth-child(1){animation-delay:.6s}
+.podioBox:nth-child(3){animation-delay:.9s}
+@keyframes enter{to{opacity:1;transform:translateY(0) scale(1);}}
+
+.primo{height:360px;border-top:8px solid gold;}
+.secondo{height:300px;border-top:8px solid silver;}
+.terzo{height:260px;border-top:8px solid #cd7f32;}
+
+.numeroGigante{font-size:80px;font-weight:bold;margin-top:10px;}
+.flagBig{width:110px;margin-top:10px;}
+.nomePilota{font-size:20px;margin-top:10px;}
+
+table{width:85%;margin:80px auto;border-collapse:collapse;background:url("https://www.transparenttextures.com/patterns/carbon-fibre.png");}
+thead th{background:#111;padding:14px;letter-spacing:3px;position:sticky;top:0;}
+td,th{text-align:center;}
+tbody tr:nth-child(even){background:#0d0d0d;}
+tbody tr:nth-child(odd){background:#070707;}
+td{padding:12px;border-bottom:1px solid #222;}
+.flag{width:24px;margin-right:8px;vertical-align:middle;}
+</style>
+</head>
+
+<body>
+
+<h1>DIVISIONE D</h1>
+<div id="podio"></div>
+
+<table>
+<thead><tr><th>POS</th><th>PILOTA</th><th>NAZIONE</th><th>PUNTI</th></tr></thead>
+<tbody id="classifica"></tbody>
+</table>
+
+<script src="piloti.js"></script>
+<script src="rating.js"></script>
+<script src="divisioni.js"></script>
+
+<script>
+const divisione = getDivisione("D");
+const podio = document.getElementById("podio");
+const ordine=[1,0,2];
+
+ordine.forEach(i=>{
+const p=divisione[i];
+const box=document.createElement("div");
+box.classList.add("podioBox");
+if(i==0) box.classList.add("primo");
+if(i==1) box.classList.add("secondo");
+if(i==2) box.classList.add("terzo");
+
+box.innerHTML=`<div class="numeroGigante">${p.posizione}</div>
+<img class="flagBig" src="https://flagcdn.com/w160/${p.nazione.code}.png">
+<div class="nomePilota">${p.nome}</div>
+<div>${p.punti} pts</div>`;
+podio.appendChild(box);
+});
+
+const tab=document.getElementById("classifica");
+divisione.forEach(p=>{
+const row=document.createElement("tr");
+row.innerHTML=`<td>${p.posizione}</td><td>${p.nome}</td>
+<td><img class="flag" src="https://flagcdn.com/w20/${p.nazione.code}.png"> ${p.nazione.name}</td>
+<td>${p.punti}</td>`;
+tab.appendChild(row);
+});
+</script>
+
+</body>
+</html>

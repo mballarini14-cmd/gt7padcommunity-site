@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Campionati del Mondo Gran Turismo</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+
+<style>
+body{
+    margin:0;
+    background:#0a0a0a;
+    color:#fff;
+    font-family:'Rajdhani', sans-serif;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:60px 40px;
+}
+
+h1{
+    text-align:center;
+    font-size:44px;
+    letter-spacing:5px;
+    margin-bottom:60px;
+}
+
+.albo-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+    gap:35px;
+}
+
+.edition-card{
+    background:linear-gradient(180deg,#111,#0c0c0c);
+    border:2px solid #e10600;
+    padding:26px;
+    position:relative;
+    box-shadow:0 0 25px rgba(225,6,0,0.15);
+    transition:0.25s;
+}
+
+.edition-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 0 35px rgba(225,6,0,0.4);
+}
+
+.edition-card::before{
+    content:"OLIMPIADI";
+    position:absolute;
+    top:-14px;
+    right:18px;
+    background:#e10600;
+    padding:5px 12px;
+    font-size:11px;
+    font-weight:700;
+}
+
+.edition-card h3{
+    margin:0;
+    font-size:22px;
+    color:#e10600;
+}
+
+.game{
+    font-size:14px;
+    opacity:0.6;
+    display:block;
+    margin:6px 0 14px;
+}
+
+.podium{
+    list-style:none;
+    padding:0;
+    margin:0;
+    border-top:1px solid #222;
+    padding-top:12px;
+}
+
+.podium li{
+    font-size:15px;
+    margin-bottom:6px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.flag-icon{
+    width:20px;
+    height:14px;
+    border-radius:2px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>OLIMPIADI SIM RACING ESPORT</h1>
+
+<div class="albo-grid">
+
+<!-- ESEMPIO (tutte uguali, cambia solo dati) -->
+<div class="edition-card">
+  <h3>EDIZIONE 2025</h3>
+  <span class="game">GT7</span>
+  <ul class="podium">
+    <li>1° Xx_Anonymus_xX <span class="flag-icon flag-icon-nl"></span></li>
+    <li>2° Kaito_Ren98 <span class="flag-icon flag-icon-jp"></span></li>
+    <li>3° Predator <span class="flag-icon flag-icon-us"></span></li>
+  </ul>
+</div>
+
+<div class="edition-card">
+  <h3>EDIZIONE 2024</h3>
+  <span class="game">GT7</span>
+  <ul class="podium">
+    <li>1° Predator <span class="flag-icon flag-icon-us"></span></li>
+    <li>2° Topdriver1998 <span class="flag-icon flag-icon-gb"></span></li>
+    <li>3° Kaito_Ren98 <span class="flag-icon flag-icon-jp"></span></li>
+  </ul>
+</div>
+
+<div class="edition-card">
+  <h3>EDIZIONE 2023</h3>
+  <span class="game">GT-SPORT</span>
+  <ul class="podium">
+    <li>1° Kaito_Ren98 <span class="flag-icon flag-icon-jp"></span></li>
+    <li>2° Predator <span class="flag-icon flag-icon-us"></span></li>
+    <li>3° Xx_Anonymus_xX <span class="flag-icon flag-icon-nl"></span></li>
+  </ul>
+</div>
+
+<!-- EDIZIONE 2023 -->
+<div class="edition-card">
+  <h3>EDIZIONE 2023</h3>
+  <span class="game">GT-SPORT</span>
+  <ul class="podium">
+    <li>1° Kaito_Ren98 <span class="flag-icon flag-icon-jp"></span></li>
+    <li>2° Predator <span class="flag-icon flag-icon-us"></span></li>
+    <li>3° Xx_Anonymus_xX <span class="flag-icon flag-icon-nl"></span></li>
+  </ul>
+</div>
+
+<!-- EDIZIONE 2022 -->
+<div class="edition-card">
+  <h3>EDIZIONE 2022</h3>
+  <span class="game">GT-SPORT</span>
+  <ul class="podium">
+    <li>1° Topdriver1998 <span class="flag-icon flag-icon-gb"></span></li>
+    <li>2° Louis_miguel <span class="flag-icon flag-icon-pt"></span></li>
+    <li>3° Xx_Anonymus_xX <span class="flag-icon flag-icon-nl"></span></li>
+  </ul>
+</div>
+
+<!-- EDIZIONE 2021 -->
+<div class="edition-card">
+  <h3>EDIZIONE 2021</h3>
+  <span class="game">GT-SPORT</span>
+  <ul class="podium">
+    <li>1° Predator <span class="flag-icon flag-icon-us"></span></li>
+    <li>2° Xx_Anonymus_xX <span class="flag-icon flag-icon-nl"></span></li>
+    <li>3° Louis_miguel <span class="flag-icon flag-icon-pt"></span></li>
+  </ul>
+</div>
+
+<!-- EDIZIONE 2020 -->
+<div class="edition-card">
+  <h3>EDIZIONE 2020</h3>
+  <span class="game">GT-SPORT</span>
+  <ul class="podium">
+    <li>1° Xx_Anonymus_xX <span class="flag-icon flag-icon-nl"></span></li>
+    <li>2° Topdriver1998 <span class="flag-icon flag-icon-gb"></span></li>
+    <li>3° Predator <span class="flag-icon flag-icon-us"></span></li>
+  </ul>
+</div>
+
+<!-- EDIZIONE 2019 -->
+<div class="edition-card">
+  <h3>EDIZIONE 2019</h3>
+  <span class="game">GT6</span>
+  <ul class="podium">
+    <li>1° Predator <span class="flag-icon flag-icon-us"></span></li>
+    <li>2° Topdriver1998 <span class="flag-icon flag-icon-gb"></span></li>
+    <li>3° Zylux <span class="flag-icon flag-icon-ch"></span></li>
+  </ul>
+</div>
+
+<!-- EDIZIONE 2018 -->
+<div class="edition-card">
+  <h3>EDIZIONE 2018</h3>
+  <span class="game">GT6</span>
+  <ul class="podium">
+    <li>1° Predator <span class="flag-icon flag-icon-us"></span></li>
+    <li>2° Xx_Anonymus_xX <span class="flag-icon flag-icon-nl"></span></li>
+    <li>3° Scopezz <span class="flag-icon flag-icon-it"></span></li>
+  </ul>
+</div>
+
+<!-- EDIZIONE 2017 -->
+<div class="edition-card">
+  <h3>EDIZIONE 2017</h3>
+  <span class="game">GT6</span>
+  <ul class="podium">
+    <li>1° Predator <span class="flag-icon flag-icon-us"></span></li>
+    <li>2° Louis_miguel <span class="flag-icon flag-icon-pt"></span></li>
+    <li>3° Xx_Anonymus_xX <span class="flag-icon flag-icon-nl"></span></li>
+  </ul>
+</div>
+
+<!-- EDIZIONE 2016 -->
+<div class="edition-card">
+  <h3>EDIZIONE 2016</h3>
+  <span class="game">GT6</span>
+  <ul class="podium">
+    <li>1° Louis_miguel <span class="flag-icon flag-icon-pt"></span></li>
+    <li>2° Topdriver1998 <span class="flag-icon flag-icon-gb"></span></li>
+    <li>3° Excuze <span class="flag-icon flag-icon-cn"></span></li>
+  </ul>
+</div>
+
+<!-- EDIZIONE 2015 -->
+<div class="edition-card">
+  <h3>EDIZIONE 2015</h3>
+  <span class="game">GT6</span>
+  <ul class="podium">
+    <li>1° Topdriver1998 <span class="flag-icon flag-icon-gb"></span></li>
+    <li>2° Louis_miguel <span class="flag-icon flag-icon-pt"></span></li>
+    <li>3° Never_lose <span class="flag-icon flag-icon-gb"></span></li>
+  </ul>
+</div>
+
+<!-- EDIZIONE 2014 -->
+<div class="edition-card">
+  <h3>EDIZIONE 2014</h3>
+  <span class="game">GT6</span>
+  <ul class="podium">
+    <li>1° Topdriver1998 <span class="flag-icon flag-icon-gb"></span></li>
+    <li>2° Louis_miguel <span class="flag-icon flag-icon-pt"></span></li>
+    <li>3° Octagon10 <span class="flag-icon flag-icon-se"></span></li>
+  </ul>
+</div>
+
+<!-- EDIZIONE 2013 -->
+<div class="edition-card">
+  <h3>EDIZIONE 2013</h3>
+  <span class="game">GT6</span>
+  <ul class="podium">
+    <li>1° Teox99 <span class="flag-icon flag-icon-it"></span></li>
+    <li>2° Yinato <span class="flag-icon flag-icon-fr"></span></li>
+    <li>3° Koolsa <span class="flag-icon flag-icon-be"></span></li>
+  </ul>
+</div>
+
+<!-- EDIZIONE 2012 -->
+<div class="edition-card">
+  <h3>EDIZIONE 2012</h3>
+  <span class="game">GT6</span>
+  <ul class="podium">
+    <li>1° Teox99 <span class="flag-icon flag-icon-it"></span></li>
+    <li>2° Vasco_n1 <span class="flag-icon flag-icon-it"></span></li>
+    <li>3° King_Arrow <span class="flag-icon flag-icon-it"></span></li>
+  </ul>
+</div>
+
+<!-- EDIZIONE 2011 -->
+<div class="edition-card">
+  <h3>EDIZIONE 2011</h3>
+  <span class="game">GT5</span>
+  <ul class="podium">
+    <li>1° Teox99 <span class="flag-icon flag-icon-it"></span></li>
+    <li>2° Kartij <span class="flag-icon flag-icon-fr"></span></li>
+    <li>3° Dominic_ct <span class="flag-icon flag-icon-it"></span></li>
+  </ul>
+</div>
+
+<!-- EDIZIONE 2010 -->
+<div class="edition-card">
+  <h3>EDIZIONE 2010</h3>
+  <span class="game">GT5</span>
+  <ul class="podium">
+    <li>1° Orochi <span class="flag-icon flag-icon-jp"></span></li>
+    <li>2° Dominic_ct <span class="flag-icon flag-icon-it"></span></li>
+    <li>3° Kartij <span class="flag-icon flag-icon-fr"></span></li>
+  </ul>
+</div>
+
+<!-- EDIZIONE 2009 -->
+<div class="edition-card">
+  <h3>EDIZIONE 2009</h3>
+  <span class="game">GT5</span>
+  <ul class="podium">
+    <li>1° Dominic_ct <span class="flag-icon flag-icon-it"></span></li>
+    <li>2° Octagon10 <span class="flag-icon flag-icon-se"></span></li>
+    <li>3° Kartij <span class="flag-icon flag-icon-fr"></span></li>
+  </ul>
+</div>
+
+<!-- EDIZIONE 2008 -->
+<div class="edition-card">
+  <h3>EDIZIONE 2008</h3>
+  <span class="game">GT5 PROLOGUE</span>
+  <ul class="podium">
+    <li>1° Louis_miguel <span class="flag-icon flag-icon-pt"></span></li>
+    <li>2° Octagon10 <span class="flag-icon flag-icon-se"></span></li>
+    <li>3° Orochi <span class="flag-icon flag-icon-jp"></span></li>
+  </ul>
+</div>
+
+<!-- EDIZIONE 2007 -->
+<div class="edition-card">
+  <h3>EDIZIONE 2007</h3>
+  <span class="game">GT5 PROLOGUE</span>
+  <ul class="podium">
+    <li>1° Louis_miguel <span class="flag-icon flag-icon-pt"></span></li>
+    <li>2° Octagon10 <span class="flag-icon flag-icon-se"></span></li>
+    <li>3° Dominic_ct <span class="flag-icon flag-icon-it"></span></li>
+  </ul>
+</div>
+
+<!-- EDIZIONE 2006 -->
+<div class="edition-card">
+  <h3>EDIZIONE 2006</h3>
+  <span class="game">GT4</span>
+  <ul class="podium">
+    <li>1° Frozen_mind <span class="flag-icon flag-icon-gb"></span></li>
+    <li>2° Hayate <span class="flag-icon flag-icon-jp"></span></li>
+    <li>3° Ermpy <span class="flag-icon flag-icon-jp"></span></li>
+  </ul>
+</div>
+
+<!-- EDIZIONE 2005 -->
+<div class="edition-card">
+  <h3>EDIZIONE 2005</h3>
+  <span class="game">GT4</span>
+  <ul class="podium">
+    <li>1° Ermpy <span class="flag-icon flag-icon-jp"></span></li>
+    <li>2° Hayate <span class="flag-icon flag-icon-jp"></span></li>
+    <li>3° Andrew77 <span class="flag-icon flag-icon-us"></span></li>
+  </ul>
+</div>
+
+<!-- EDIZIONE 2004 -->
+<div class="edition-card">
+  <h3>EDIZIONE 2004</h3>
+  <span class="game">GT3</span>
+  <ul class="podium">
+    <li>1° Hayate <span class="flag-icon flag-icon-jp"></span></li>
+    <li>2° Hermanj88 <span class="flag-icon flag-icon-jp"></span></li>
+    <li>3° Symo221_xt <span class="flag-icon flag-icon-jp"></span></li>
+  </ul>
+</div>
+
+<!-- EDIZIONE 2003 -->
+<div class="edition-card">
+  <h3>EDIZIONE 2003</h3>
+  <span class="game">GT2</span>
+  <ul class="podium">
+    <li>1° Hayate <span class="flag-icon flag-icon-jp"></span></li>
+    <li>2° Wanker_n1 <span class="flag-icon flag-icon-us"></span></li>
+    <li>3° Vinlet <span class="flag-icon flag-icon-us"></span></li>
+  </ul>
+</div>
+
+<!-- EDIZIONE 2002 -->
+<div class="edition-card">
+  <h3>EDIZIONE 2002</h3>
+  <span class="game">GT1</span>
+  <ul class="podium">
+    <li>1° Yamauki_sp <span class="flag-icon flag-icon-jp"></span></li>
+    <li>2° Texter_day <span class="flag-icon flag-icon-jp"></span></li>
+    <li>3° Brolich-71HF <span class="flag-icon flag-icon-jp"></span></li>
+  </ul>
+</div>
+
+<!-- EDIZIONE 2001 -->
+<div class="edition-card">
+  <h3>EDIZIONE 2001</h3>
+  <span class="game">GT1</span>
+  <ul class="podium">
+    <li>1° Brolich-71HF <span class="flag-icon flag-icon-jp"></span></li>
+    <li>2° Texter_day <span class="flag-icon flag-icon-jp"></span></li>
+    <li>3° Freakzila <span class="flag-icon flag-icon-jp"></span></li>
+  </ul>
+
+
+
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Hall of Legends</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#050505;
+color:white;
+opacity:0;
+animation:fadeIn 1.2s forwards;
+}
+
+@keyframes fadeIn{to{opacity:1;}}
+
+.header{
+text-align:center;
+padding:70px 20px;
+background:linear-gradient(black,#111);
+border-bottom:3px solid #e10600;
+}
+
+.header h1{
+color:#e10600;
+font-size:52px;
+letter-spacing:4px;
+text-shadow:0 0 15px #e10600;
+}
+
+.header p{color:#aaa;}
+
+.container{
+max-width:1300px;
+margin:auto;
+padding:40px;
+}
+
+.legend{
+background:#0c0c0c;
+border:1px solid #222;
+margin-bottom:35px;
+padding:30px;
+transition:0.3s;
+position:relative;
+cursor:pointer;
+}
+
+.legend:hover{
+transform:scale(1.015);
+border-color:#e10600;
+box-shadow:0 0 25px rgba(225,6,0,0.35);
+}
+
+.rank{
+font-size:26px;
+color:#e10600;
+font-weight:bold;
+}
+
+.name{
+font-size:36px;
+margin-top:5px;
+letter-spacing:2px;
+}
+
+.crown{
+position:absolute;
+top:20px;
+right:25px;
+font-size:32px;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.25);}
+100%{transform:scale(1);}
+}
+
+.stats{
+display:grid;
+grid-template-columns: repeat(6,1fr);
+gap:15px;
+margin-top:25px;
+}
+
+.stat{
+background:#111;
+padding:12px;
+border-left:3px solid #e10600;
+text-align:center;
+}
+
+.stat-title{
+color:#888;
+font-size:11px;
+letter-spacing:1px;
+}
+
+.stat-value{
+font-size:22px;
+font-weight:bold;
+margin-top:4px;
+}
+
+.timeline{
+margin-top:25px;
+border-left:2px solid #e10600;
+padding-left:18px;
+}
+
+.event{
+margin-bottom:8px;
+color:#bbb;
+}
+
+.first{
+background:linear-gradient(90deg,#120000,#000);
+border:2px solid #e10600;
+}
+
+.first .name{
+font-size:44px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+<h1>HALL OF LEGENDS</h1>
+<p>I piloti che hanno scritto la storia del Sim Racing</p>
+</div>
+
+<div class="container">
+
+<!-- #1 -->
+<div class="legend first">
+<div class="crown">👑</div>
+<div class="rank">#1</div>
+<div class="name">Predator</div>
+
+<div class="stats">
+<div class="stat"><div class="stat-title">Mondiali</div><div class="stat-value">5</div></div>
+<div class="stat"><div class="stat-title">Olimpiadi</div><div class="stat-value">3</div></div>
+<div class="stat"><div class="stat-title">Vittorie</div><div class="stat-value">89</div></div>
+<div class="stat"><div class="stat-title">Podi</div><div class="stat-value">107</div></div>
+<div class="stat"><div class="stat-title">Endurance</div><div class="stat-value">7</div></div>
+<div class="stat"><div class="stat-title">Campionati Minori</div><div class="stat-value">18</div></div>
+</div>
+
+<div class="timeline">
+<div class="event">2010 — Inizio era Predator</div>
+<div class="event">2015 — Dominio assoluto mondiale</div>
+<div class="event">2025 — Pilota più vincente della storia</div>
+</div>
+</div>
+
+<!-- #2 -->
+<div class="legend">
+<div class="rank">#2</div>
+<div class="name">Teox99</div>
+
+<div class="stats">
+<div class="stat"><div class="stat-title">Mondiali</div><div class="stat-value">3</div></div>
+<div class="stat"><div class="stat-title">Olimpiadi</div><div class="stat-value">1</div></div>
+<div class="stat"><div class="stat-title">Vittorie</div><div class="stat-value">84</div></div>
+<div class="stat"><div class="stat-title">Podi</div><div class="stat-value">101</div></div>
+<div class="stat"><div class="stat-title">Endurance</div><div class="stat-value">9</div></div>
+<div class="stat"><div class="stat-title">Campionati Minori</div><div class="stat-value">32</div></div>
+</div>
+
+<div class="timeline">
+<div class="event">2014 — Ascesa fulminea</div>
+<div class="event">2020 — Stagione perfetta</div>
+<div class="event">2024 — Leggenda certificata</div>
+</div>
+</div>
+
+<!-- #3 -->
+<div class="legend">
+<div class="rank">#3</div>
+<div class="name">Kaito_Ren-98</div>
+
+<div class="stats">
+<div class="stat"><div class="stat-title">Mondiali</div><div class="stat-value">2</div></div>
+<div class="stat"><div class="stat-title">Olimpiadi</div><div class="stat-value">1</div></div>
+<div class="stat"><div class="stat-title">Vittorie</div><div class="stat-value">14</div></div>
+<div class="stat"><div class="stat-title">Podi</div><div class="stat-value">23</div></div>
+<div class="stat"><div class="stat-title">Endurance</div><div class="stat-value">2</div></div>
+<div class="stat"><div class="stat-title">Campionati Minori</div><div class="stat-value">5</div></div>
+</div>
+
+<div class="timeline">
+<div class="event">2017 — Ingresso PRO</div>
+<div class="event">2019 — Impresa Endurance</div>
+<div class="event">2023 — Leader tecnico</div>
+</div>
+</div>
+
+<!-- #4 -->
+<div class="legend">
+<div class="rank">#4</div>
+<div class="name">Topdriver1998</div>
+
+<div class="stats">
+<div class="stat"><div class="stat-title">Mondiali</div><div class="stat-value">3</div></div>
+<div class="stat"><div class="stat-title">Olimpiadi</div><div class="stat-value">1</div></div>
+<div class="stat"><div class="stat-title">Vittorie</div><div class="stat-value">57</div></div>
+<div class="stat"><div class="stat-title">Podi</div><div class="stat-value">97</div></div>
+<div class="stat"><div class="stat-title">Endurance</div><div class="stat-value">3</div></div>
+<div class="stat"><div class="stat-title">Campionati Minori</div><div class="stat-value">19</div></div>
+</div>
+
+<div class="timeline">
+<div class="event">2015 — Rookie dell’anno</div>
+<div class="event">2018 — Dominio mondiale</div>
+<div class="event">2022 — Record pole</div>
+</div>
+</div>
+
+<!-- #5 -->
+<div class="legend">
+<div class="rank">#5</div>
+<div class="name">Louis_miguel</div>
+
+<div class="stats">
+<div class="stat"><div class="stat-title">Mondiali</div><div class="stat-value">3</div></div>
+<div class="stat"><div class="stat-title">Olimpiadi</div><div class="stat-value">1</div></div>
+<div class="stat"><div class="stat-title">Vittorie</div><div class="stat-value">84</div></div>
+<div class="stat"><div class="stat-title">Podi</div><div class="stat-value">129</div></div>
+<div class="stat"><div class="stat-title">Endurance</div><div class="stat-value">9</div></div>
+<div class="stat"><div class="stat-title">Campionati Minori</div><div class="stat-value">25</div></div>
+</div>
+
+<div class="timeline">
+<div class="event">2012 — Primo titolo internazionale</div>
+<div class="event">2016 — Dominio GT</div>
+<div class="event">2021 — Ritorno competitivo</div>
+</div>
+</div>
+
+</div>
+</body>
+</html>
+
+

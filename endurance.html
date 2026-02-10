@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Albo d'Oro Endurance</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* BASE */
+body{
+margin:0;
+background:radial-gradient(circle at top,#111,#050505);
+color:white;
+font-family:'Rajdhani', sans-serif;
+}
+
+header{
+text-align:center;
+padding:50px 20px;
+background:black;
+border-bottom:3px solid #e10600;
+}
+
+h1{
+font-size:48px;
+letter-spacing:6px;
+margin:0;
+}
+
+header p{
+opacity:.7;
+letter-spacing:2px;
+}
+
+header::after{
+content:"";
+display:block;
+height:4px;
+margin-top:20px;
+background:linear-gradient(90deg,transparent,#e10600,transparent);
+}
+
+/* SWITCH MODALITÀ */
+.mode-switch{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:15px;
+margin:40px 0;
+}
+
+.mode-switch button{
+background:#111;
+color:white;
+border:1px solid #e10600;
+padding:12px 20px;
+font-family:'Rajdhani',sans-serif;
+letter-spacing:2px;
+cursor:pointer;
+transition:.2s;
+}
+
+.mode-switch button:hover{
+background:#e10600;
+}
+
+.mode{display:none;}
+.mode.active{display:block;}
+
+.container{
+width:92%;
+margin:auto;
+}
+
+/* EVENTI */
+.event-title{
+text-align:center;
+font-size:32px;
+letter-spacing:4px;
+margin:60px 0 30px;
+}
+
+/* GRID */
+.year-grid{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
+gap:18px;
+}
+
+.year-card{
+background:linear-gradient(180deg,#1b1b1b,#111);
+padding:18px;
+border-radius:10px;
+border:1px solid #222;
+transition:.25s;
+position:relative;
+overflow:hidden;
+}
+
+.year-card:hover{
+transform:translateY(-5px) scale(1.02);
+box-shadow:0 0 18px rgba(225,6,0,0.6);
+}
+
+.year{
+font-size:24px;
+font-weight:700;
+margin-bottom:8px;
+}
+
+.p1{color:gold;font-weight:700;}
+.p2{color:silver;}
+.p3{color:#cd7f32;}
+
+/* ACCORDION */
+details{
+background:#0e0e0e;
+border:1px solid #222;
+margin-bottom:15px;
+border-radius:8px;
+}
+
+summary{
+padding:15px;
+cursor:pointer;
+font-size:22px;
+letter-spacing:3px;
+}
+
+/* TIMELINE */
+.timeline-item{
+display:flex;
+gap:20px;
+border-left:4px solid #e10600;
+padding:15px 20px;
+margin:15px 0;
+}
+
+.timeline-item span{
+font-size:22px;
+font-weight:700;
+min-width:70px;
+}
+
+/* PODIO GIGANTE */
+.podium-giant{
+display:flex;
+justify-content:center;
+align-items:flex-end;
+gap:12px;
+margin:35px 0;
+}
+
+.podium-giant div{
+background:#111;
+width:200px;
+padding:15px;
+text-align:center;
+border-radius:8px;
+box-shadow:0 0 15px rgba(0,0,0,.6);
+}
+
+.podium-giant .p1{height:160px;border-top:6px solid gold;}
+.podium-giant .p2{height:120px;border-top:6px solid silver;}
+.podium-giant .p3{height:100px;border-top:6px solid #cd7f32;}
+
+.podium-year{
+text-align:center;
+opacity:.7;
+margin-top:8px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>ALBO D’ORO ENDURANCE</h1>
+<p>Storico ufficiale GT7 PAD League — dal 2010 ad oggi</p>
+</header>
+
+<div class="mode-switch">
+<button onclick="showMode('grid')">GRID COMPLETA</button>
+<button onclick="showMode('accordion')">PER GARA</button>
+<button onclick="showMode('timeline')">TIMELINE</button>
+<button onclick="showMode('podium')">PODIO GIGANTE</button>
+</div>
+
+<div class="container">
+
+<div id="grid" class="mode active"></div>
+<div id="accordion" class="mode"></div>
+<div id="timeline" class="mode"></div>
+<div id="podium" class="mode"></div>
+
+</div>
+
+<script>
+const teams=[
+"Brabham Racing Organisation","Carbon Racing Team","Labsan Racing Team",
+"Keystone & One","GTPL_Team Racing","GT_Italia Corse","VRGT Racing Team",
+"Cooper Car Company","Dallara Automobili","Alan Racing","Scuderia Ambrosiana",
+"Velocità Massima","Gli Equilibristi della Frenata","Thunder Thrashers",
+"Vipere della Velocità","Blaze Barracuda","Burnt Rubber","Speedwagon Cruisers",
+"Triple Clutchers","Brake Dancers","BlurryLights","Rustpower","Apex Predators",
+"Velocity Vortex","Nitro Navigators","Drift Dynamos"
+];
+
+const events=[
+"24 ORE DI LE MANS",
+"24 ORE DI DAYTONA",
+"9 ORE DI SUZUKA",
+"12 ORE DI BATHURST"
+];
+
+function randomPodium(){
+let s=[...teams].sort(()=>0.5-Math.random());
+return s.slice(0,3);
+}
+
+const data={};
+events.forEach(e=>{
+data[e]=[];
+for(let y=2025;y>=2010;y--){
+data[e].push({year:y,podium:randomPodium()});
+}
+});
+
+function showMode(id){
+document.querySelectorAll('.mode').forEach(m=>m.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+}
+
+/* GRID */
+const grid=document.getElementById("grid");
+events.forEach(e=>{
+grid.innerHTML+=`<div class="event-title">${e}</div><div class="year-grid">`;
+data[e].forEach(r=>{
+grid.innerHTML+=`
+<div class="year-card">
+<div class="year">${r.year}</div>
+<div class="p1">🥇 ${r.podium[0]}</div>
+<div class="p2">🥈 ${r.podium[1]}</div>
+<div class="p3">🥉 ${r.podium[2]}</div>
+</div>`;
+});
+grid.innerHTML+=`</div>`;
+});
+
+/* ACCORDION */
+const acc=document.getElementById("accordion");
+events.forEach(e=>{
+acc.innerHTML+=`
+<details>
+<summary>${e}</summary>
+<div class="year-grid">
+${data[e].map(r=>`
+<div class="year-card">
+<div class="year">${r.year}</div>
+<div class="p1">🥇 ${r.podium[0]}</div>
+<div class="p2">🥈 ${r.podium[1]}</div>
+<div class="p3">🥉 ${r.podium[2]}</div>
+</div>`).join("")}
+</div>
+</details>`;
+});
+
+/* TIMELINE */
+const tl=document.getElementById("timeline");
+events.forEach(e=>{
+tl.innerHTML+=`<div class="event-title">${e}</div>`;
+data[e].forEach(r=>{
+tl.innerHTML+=`
+<div class="timeline-item">
+<span>${r.year}</span>
+<div>
+<div class="p1">🥇 ${r.podium[0]}</div>
+<div class="p2">🥈 ${r.podium[1]}</div>
+<div class="p3">🥉 ${r.podium[2]}</div>
+</div>
+</div>`;
+});
+});
+
+/* PODIO GIGANTE */
+const pod=document.getElementById("podium");
+events.forEach(e=>{
+pod.innerHTML+=`<div class="event-title">${e}</div>`;
+data[e].forEach(r=>{
+pod.innerHTML+=`
+<div class="podium-giant">
+<div class="p2">🥈 ${r.podium[1]}</div>
+<div class="p1">🥇 ${r.podium[0]}</div>
+<div class="p3">🥉 ${r.podium[2]}</div>
+</div>
+<div class="podium-year">${r.year}</div>`;
+});
+});
+</script>
+
+</body>
+</html>
+

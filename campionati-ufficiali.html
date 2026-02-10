@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campionati Ufficiali | GT7 PAD LEAGUE</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family: Rajdhani, Arial;
+background:#0b0b0b;
+color:white;
+}
+
+header{
+background:linear-gradient(90deg,#8B0000,#111);
+padding:30px;
+text-align:center;
+}
+
+h1{
+margin:0;
+letter-spacing:3px;
+}
+
+.container{
+width:90%;
+margin:auto;
+margin-top:40px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.card{
+background:#111;
+border-radius:12px;
+overflow:hidden;
+border:1px solid #222;
+transition:.3s;
+text-decoration:none;
+color:white;
+}
+
+.card:hover{
+transform:scale(1.02);
+box-shadow:0 0 20px rgba(225,6,0,0.6);
+}
+
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+filter:brightness(.7);
+}
+
+.card-content{
+padding:20px;
+}
+
+.card h2{
+margin:0;
+}
+
+.card p{
+opacity:.7;
+}
+
+@media(max-width:900px){
+.grid{
+grid-template-columns:1fr;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Campionati Ufficiali GT7 PAD LEAGUE</h1>
+</header>
+
+<div class="container">
+
+<div class="grid">
+
+<a class="card" href="campionato2026.html">
+<img src="regolamento2.jpg">
+<div class="card-content">
+<h2>Campionato Italiano GT7</h2>
+<p>12 Round ufficiali con sistema divisioni e qualificazioni.</p>
+</div>
+</a>
+
+<a class="card" href="campionati/world-cup.html">
+<img src="regolamento3.jpg">
+<div class="card-content">
+<h2>World Cup GT7</h2>
+<p>Evento internazionale con piloti selezionati.</p>
+</div>
+</a>
+
+<a class="card" href="time-trial.html">
+
+<img src="immagini/tt-time-trial.jpg">
+<div class="card-content">
+<h2>Time Trial Championship</h2>
+<p>Classifiche globali sul giro secco.</p>
+</div>
+</a>
+
+<a class="card" href="campionati/nations-cup.html">
+<img src="banner-gt7.jpg">
+<div class="card-content">
+<h2>Nations Cup Italia</h2>
+<p>Formato ispirato GT World Series.</p>
+</div>
+</a>
+
+<a class="card" href="campionati/endurance-series.html"><
+<img src="immagini/squadra-corse.jpg">
+<div class="card-content">
+<h2>Endurance Series</h2>
+<p>Campionato gare lunghe a squadre.</p>
+</div>
+</a>
+
+<a class="card" href="campionati/eventi-speciali.html">
+<img src="immagini/flash-news.jpg">
+<div class="card-content">
+<h2>Eventi Speciali</h2>
+<p>Round singoli e competizioni a invito.</p>
+</div>
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
