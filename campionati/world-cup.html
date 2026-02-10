@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>World Cup GT7</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+    .calendar-section{
+    background:#0f0f0f;
+    padding:15px;
+    border-top:2px solid #ff2b2b;
+    border-bottom:2px solid #ff2b2b;
+    max-width:900px;
+    margin:auto;
+}
+
+.calendar-title{
+    text-align:center;
+    font-family:'Orbitron';
+    font-size:20px;
+    letter-spacing:1px;
+    margin-bottom:10px;
+}
+
+.calendar-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+}
+
+.calendar-table td{
+    padding:6px;
+    border-bottom:1px solid #222;
+}
+
+.round{
+    font-family:'Orbitron';
+    color:#ff2b2b;
+    width:70px;
+}
+
+.track{
+    font-weight:600;
+}
+
+.flag-badge{
+    background:#1c1c1c;
+    border:1px solid #444;
+    padding:2px 6px;
+    border-radius:4px;
+    margin-right:6px;
+    font-size:12px;
+}
+
+
+
+body{
+    margin:0;
+    background:#0b0b0b;
+    color:white;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+header{
+    background: linear-gradient(90deg,#8b0000,#000);
+    padding:30px;
+    text-align:center;
+    font-family:'Orbitron';
+    font-size:34px;
+    letter-spacing:2px;
+}
+
+.pro-badge{
+    background:red;
+    padding:10px;
+    text-align:center;
+    font-family:'Orbitron';
+    letter-spacing:2px;
+}
+
+.container{
+    width:90%;
+    margin:auto;
+    padding:30px 0;
+}
+
+.section{
+    background:#111;
+    padding:25px;
+    margin-bottom:25px;
+    border-left:4px solid red;
+    box-shadow:0 0 15px rgba(255,0,0,0.3);
+}
+
+h2{
+    font-family:'Orbitron';
+    color:#ff2b2b;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+}
+
+th,td{
+    padding:10px;
+    border-bottom:1px solid #333;
+    text-align:center;
+}
+
+th{
+    background:#1c1c1c;
+}
+
+.flag{
+    font-size:22px;
+}
+
+.highlight{
+    color:#ff3c3c;
+    font-weight:bold;
+}
+.worldcup-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:20px;
+    max-width:1200px;
+    margin:30px auto;
+}
+
+/* TITOLI */
+.section-title{
+    font-family:'Orbitron';
+    font-size:20px;
+    margin-bottom:10px;
+    border-bottom:2px solid #ff2b2b;
+    padding-bottom:5px;
+}
+
+/* CALENDARIO */
+.calendar-box{
+    border:2px solid #ff2b2b;
+    padding:12px;
+    background:#0f0f0f;
+}
+
+.calendar-table{
+font-size:14px;
+}
+
+.calendar-table td{
+padding:12px 10px;
+}
+
+
+.round{
+    font-family:'Orbitron';
+    color:#ff2b2b;
+    width:50px;
+}
+
+.flag{
+    background:#1c1c1c;
+    border:1px solid #444;
+    padding:2px 6px;
+    margin-right:6px;
+    font-size:11px;
+    border-radius:4px;
+}
+
+/* TEAM */
+.teams-box{
+    border:2px solid #ff2b2b;
+    padding:12px;
+    background:#0f0f0f;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.team-card{
+    background:#141414;
+    border:1px solid #333;
+    padding:8px;
+}
+
+.team-card h3{
+    font-family:'Orbitron';
+    font-size:14px;
+    margin-bottom:4px;
+}
+
+.team-card span{
+    font-size:11px;
+    color:#ff2b2b;
+}
+
+.team-card p{
+    font-size:12px;
+    color:#ccc;
+}
+.calendar-table tr:hover{
+background:#1a0000;
+}
+
+.next-race{
+background:#220000;
+border-left:3px solid #ff2b2b;
+}
+.team-card{
+background:linear-gradient(180deg,#151515,#0c0c0c);
+border:1px solid #333;
+padding:10px;
+transition:0.2s;
+}
+
+.team-card:hover{
+transform:translateY(-2px);
+box-shadow:0 0 10px rgba(255,0,0,0.5);
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header>
+GT7 PAD LEAGUE – WORLD CUP
+</header>
+
+<div class="pro-badge">
+CAMPIONATO RISERVATO ESCLUSIVAMENTE AI PILOTI CATEGORIA PRO
+</div>
+<section class="worldcup-grid">
+
+    <!-- CALENDARIO -->
+    <div class="calendar-box">
+        <h2 class="section-title">Calendario Ufficiale 2026</h2>
+
+        <table class="calendar-table">
+            <tr><td class="round">G1</td><td>10/12 Apr</td><td><span class="flag">FR</span> Alsace</td></tr>
+            <tr><td class="round">G2</td><td>17/19 Apr</td><td><span class="flag">BR</span> Interlagos</td></tr>
+            <tr><td class="round">G3</td><td>08/10 Mag</td><td><span class="flag">JP</span> BB Raceway</td></tr>
+            <tr><td class="round">G4</td><td>15/17 Mag</td><td><span class="flag">UK</span> Brands Hatch</td></tr>
+            <tr><td class="round">G5</td><td>29/31 Mag</td><td><span class="flag">ES</span> Catalunya</td></tr>
+            <tr><td class="round">G6</td><td>12/14 Giu</td><td><span class="flag">IT</span> Lago Maggiore</td></tr>
+            <tr><td class="round">G7</td><td>26/28 Giu</td><td><span class="flag">BE</span> Spa</td></tr>
+            <tr><td class="round">G8</td><td>10/12 Lug</td><td><span class="flag">HR</span> Dragon Trail</td></tr>
+            <tr><td class="round">G9</td><td>24/26 Lug</td><td><span class="flag">CH</span> Deep Forest</td></tr>
+            <tr><td class="round">G10</td><td>04/06 Set</td><td><span class="flag">JP</span> Fuji</td></tr>
+            <tr><td class="round">G11</td><td>18/20 Set</td><td><span class="flag">USA</span> Grand Valley</td></tr>
+            <tr><td class="round">G12</td><td>25/27 Set</td><td><span class="flag">JP</span> Kyoto</td></tr>
+            <tr><td class="round">G13</td><td>9/11 Ott</td><td><span class="flag">AU</span> Bathurst</td></tr>
+            <tr><td class="round">G14</td><td>23/25 Ott</td><td><span class="flag">AT</span> Red Bull Ring</td></tr>
+            <tr><td class="round">G15</td><td>6/8 Nov</td><td><span class="flag">UAE</span> Yas Marina</td></tr>
+            <tr><td class="round">G16</td><td>20/22 Nov</td><td><span class="flag">JP</span> Suzuka</td></tr>
+            <tr class="next-race">
+
+        </table>
+    </div>
+
+    <!-- TEAM -->
+    <div class="teams-box">
+        <h2 class="section-title">Team Partecipanti</h2>
+
+        <div class="team-card">
+            <h3>GTDrivers Racing <span>ITA</span></h3>
+            <p>Pilota 1</p>
+            <p>Pilota 2</p>
+        </div>
+
+        <div class="team-card">
+            <h3>GT7Pad League <span>ITA</span></h3>
+            <p>Pilota 1</p>
+            <p>Pilota 2</p>
+        </div>
+
+        <div class="team-card">
+            <h3>Keystone Racing <span>USA</span></h3>
+            <p>Pilota 1</p>
+            <p>Pilota 2</p>
+        </div>
+
+        <div class="team-card">
+            <h3>Carbon Racing <span>ENG</span></h3>
+            <p>Pilota 1</p>
+            <p>Pilota 2</p>
+        </div>
+
+        <div class="team-card">
+            <h3>GTSniper League <span>USA</span></h3>
+            <p>Pilota 1</p>
+            <p>Pilota 2</p>
+        </div>
+
+        <div class="team-card">
+            <h3>Gazoo Racing <span>JP</span></h3>
+            <p>Pilota 1</p>
+            <p>Pilota 2</p>
+        </div>
+
+        <div class="team-card">
+            <h3>Tom's Racing <span>JP</span></h3>
+            <p>Pilota 1</p>
+            <p>Pilota 2</p>
+        </div>
+
+        <div class="team-card">
+            <h3>GTWS Racing <span>FRA</span></h3>
+            <p>Pilota 1</p>
+            <p>Pilota 2</p>
+        </div>
+
+        <div class="team-card">
+            <h3>Carrazza Team <span>BRA</span></h3>
+            <p>Pilota 1</p>
+            <p>Pilota 2</p>
+        </div>
+
+        <div class="team-card">
+            <h3>Miyazono Racing <span>JP</span></h3>
+            <p>Pilota 1</p>
+            <p>Pilota 2</p>
+        </div>
+    </div>
+
+</section>
+
+
+</div>
+
+
+<div class="container">
+
+<div class="section">
+<h2>Struttura del Campionato</h2>
+
+<p>
+La <span class="highlight">World Cup GT7</span> rappresenta il massimo livello competitivo internazionale della lega, accessibile unicamente ai piloti classificati in categoria <span class="highlight">PRO</span>.
+</p>
+
+<ul>
+<li>10 Team ufficiali</li>
+<li>20 Piloti totali (2 per squadra)</li>
+<li>Vetture Gran Turismo categoria DTM</li>
+<li>Contratti di sponsorizzazione tra case automobilistiche e team</li>
+<li>Campionato multi-round internazionale</li>
+</ul>
+
+</div>
+
+<div class="section">
+<h2>Weekend di Gara</h2>
+
+<ul>
+<li>Prove Libere 1</li>
+<li>Prove Libere 2</li>
+<li>Prove Libere 3</li>
+<li>Qualifiche ufficiali (Q1 – Q2 – Q3)</li>
+<li>Gara</li>
+</ul>
+
+<p>Le qualifiche determinano la griglia di partenza ufficiale.</p>
+
+</div>
+
+<div class="section">
+<h2>Sistema di Punteggio</h2>
+
+<table>
+<tr><th>Posizione</th><th>Punti</th></tr>
+<tr><td>1°</td><td>25</td></tr>
+<tr><td>2°</td><td>18</td></tr>
+<tr><td>3°</td><td>15</td></tr>
+<tr><td>4°</td><td>12</td></tr>
+<tr><td>5°</td><td>10</td></tr>
+<tr><td>6°</td><td>8</td></tr>
+<tr><td>7°</td><td>6</td></tr>
+<tr><td>8°</td><td>4</td></tr>
+<tr><td>9°</td><td>2</td></tr>
+<tr><td>10°</td><td>1</td></tr>
+</table>
+
+<p>1 punto addizionale assegnato per il giro veloce se registrato da un pilota nei primi 10.</p>
+
+</div>
+
+<div class="section">
+<h2>Classifiche Ufficiali</h2>
+
+<ul>
+<li>Classifica Piloti (Titolo Mondiale)</li>
+<li>Classifica Costruttori</li>
+<li>Classifica Team</li>
+</ul>
+
+</div>
+
+<div class="section">
+<h2>Direzione Gara</h2>
+
+<ul>
+<li>Supervisione completa di tutte le sessioni</li>
+<li>Controllo Track Limits</li>
+<li>Analisi incidenti post-gara</li>
+<li>Penalità: Warning, Time Penalty, Drive Through, Stop & Go</li>
+</ul>
+
+</div>
+
+<div class="section">
+<h2>Bandiere</h2>
+
+<table>
+<tr><th>Bandiera</th><th>Significato</th></tr>
+<tr><td class="flag">🟨</td><td>Pericolo</td></tr>
+<tr><td class="flag">🟥</td><td>Sessione sospesa</td></tr>
+<tr><td class="flag">🟩</td><td>Pista libera</td></tr>
+<tr><td class="flag">🏁</td><td>Fine gara</td></tr>
+<tr><td class="flag">⚫</td><td>Squalifica</td></tr>
+<tr><td class="flag">🔵</td><td>Bandiera Blu</td></tr>
+</table>
+
+</div>
+
+<div class="section">
+<h2>Formato Team</h2>
+
+<ul>
+<li>2 Piloti titolari per squadra</li>
+<li>Punti costruttori = somma risultati dei due piloti</li>
+<li>Strategie di squadra consentite</li>
+</ul>
+
+</div>
+
+</div>
+
+</body>
+</html>
+
