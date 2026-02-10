@@ -1,721 +1,554 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GT7 PAD LEAGUE</title>
- <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-   
-.reg-card img{
-width:100%;
-height:180px;
-object-fit:cover;
-border-radius:8px;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GT7 PAD LEAGUE</title>
 
-body{
-    margin:0;
-    font-family: Arial, Helvetica, sans-serif;
-    color:white;
-    background:#0b0b0b;
-    background-image:
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      color:white;
+      background:#0b0b0b;
+      background-image:
         repeating-linear-gradient(
-            45deg,
-            rgba(255,255,255,0.03) 0px,
-            rgba(255,255,255,0.03) 2px,
-            transparent 2px,
-            transparent 6px
+          45deg,
+          rgba(255,255,255,0.03) 0px,
+          rgba(255,255,255,0.03) 2px,
+          transparent 2px,
+          transparent 6px
         );
-    animation: moveBg 20s linear infinite;
-}
-
-@keyframes moveBg{
-    from{ background-position:0 0; }
-    to{ background-position:400px 0; }
-}
-
-/* HEADER */
-
-header{
-    background:#111;
-    text-align:center;
-    padding:0;
-    border-bottom:2px solid #e10600;
-}
-
-
-.logo{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    width:700px;
-    max-width:90%;
-    z-index:2;
-    filter: drop-shadow(0 0 25px rgba(225,6,0,0.9));
-}
-
-.main-banner{
-    position:relative;
-    width:100%;
-    height:625px;
-    background-image:url("banner-gt7.jpg");
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-    border-bottom:2px solid #e10600;
-    overflow:hidden;
-}
-
-
-
-.banner-overlay{
-    position:absolute;
-    width:100%;
-    height:100%;
-    background:linear-gradient(90deg, transparent, rgba(225,6,0,0.25), transparent);
-    animation:bannerMove 6s linear infinite;
-}
-
-.banner-glow{
-    position:absolute;
-    bottom:0;
-    width:100%;
-    height:120px;
-    background:linear-gradient(180deg, transparent, rgba(225,6,0,0.35));
-}
-
-
-@keyframes bannerMove{
-    0%{transform:translateX(-100%);}
-    100%{transform:translateX(100%);}
-}
-
-.logo{
-    width:420px;
-    z-index:2;
-    filter: drop-shadow(0 0 25px rgba(225,6,0,0.9));
-}
-
-
-
-
-.animated-line{
-height:6px;
-background:linear-gradient(90deg,#111,#e10600,#111);
-}
-
-/* NAV */
-
-nav{
-    background:#000;
-    padding:15px;
-    text-align:center;
-}
-
-nav a{
-    color:white;
-    margin:0 20px;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-nav a:hover{
-    color:#e10600;
-}
-
-/* BANNER LIVE */
-
-.live-banner{
-    background:linear-gradient(90deg,#7a0000,#e10600,#7a0000);
-    padding:16px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:14px;
-    font-weight:bold;
-    letter-spacing:2px;
-    text-transform:uppercase;
-    box-shadow:0 0 20px rgba(225,6,0,0.7);
-    position:relative;
-    overflow:hidden;
-}
-
-.live-banner::after{
-    content:"";
-    position:absolute;
-    top:0;
-    left:-200px;
-    width:200px;
-    height:100%;
-    background:linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-    animation:scanLive 3s linear infinite;
-}
-
-@keyframes scanLive{
-    0%{ left:-200px; }
-    100%{ left:100%; }
-}
-
-.live-dot{
-    width:12px;
-    height:12px;
-    background:white;
-    border-radius:50%;
-    animation:blink 1s infinite;
-    box-shadow:0 0 10px white;
-}
-
-
-.live-dot{
-    width:10px;
-    height:10px;
-    background:white;
-    border-radius:50%;
-    animation:blink 1s infinite;
-}
-
-@keyframes blink{
-    0%{opacity:1;}
-    50%{opacity:0.2;}
-    100%{opacity:1;}
-}
-
-/* SEZIONI */
-
-.section{
-    padding:60px 10%;
-}
-
-h2{
-    margin-bottom:20px;
-}
-
-.card{
-    background:#1a1a1a;
-    padding:15px;
-    margin-bottom:10px;
-    border-left:4px solid #e10600;
-    transition:0.2s;
-}
-
-.card:hover{
-    transform:translateX(5px);
-    box-shadow:0 0 15px rgba(225,6,0,0.4);
-}
-
-/* GRID */
-
-.grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:40px;
-}
-
-footer{
-    text-align:center;
-    padding:30px;
-    background:#000;
-    margin-top:40px;
-}
-
-.hero{
-    text-align:center;
-    padding:60px 20px;
-    background:linear-gradient(180deg, rgba(0,0,0,0.85), #0b0b0b);
-    border-bottom:1px solid #e10600;
-}
-
-
-.hero h1{
-    font-family: 'Rajdhani', sans-serif;
-    font-size:72px;
-    font-weight:700;
-    letter-spacing:4px;
-    margin:0;
-    text-transform:uppercase;
-}
-
-
-.hero p{
-    font-family: 'Rajdhani', sans-serif;
-    font-size:18px;
-    letter-spacing:2px;
-    opacity:0.7;
-    margin-top:10px;
-}
-
-
-.hero-stats{
-    display:flex;
-    justify-content:center;
-    gap:40px;
-    margin-top:25px;
-    font-weight:bold;
-}
-
-.hero-stats div{
-    background:#1a1a1a;
-    padding:10px 20px;
-    border-radius:6px;
-    border:1px solid #e10600;
-    font-family: 'Rajdhani', sans-serif;
-font-size:20px;
-
-}
-
-.race-box{
-    background:#111;
-    padding:30px;
-    border-left:4px solid #e10600;
-}
-
-.race-info{
-    text-align:center;
-    margin-bottom:30px;
-}
-
-.podium{
-    display:flex;
-    justify-content:center;
-    align-items:flex-end;
-    gap:20px;
-}
-
-.podium-card{
-    background:#1a1a1a;
-    padding:20px;
-    width:150px;
-    text-align:center;
-    border-radius:6px;
-}
-
-.p1{height:180px;border-top:4px solid gold;}
-.p2{height:140px;border-top:4px solid silver;}
-.p3{height:120px;border-top:4px solid #cd7f32;}
-.regolamenti-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr 1fr;
-    gap:30px;
-}
-
-.reg-card{
-text-decoration:none;
-color:white;
-display:block;
-background:#111;
-padding:10px;
-border-radius:10px;
-transition:0.2s;
-}
-
-.reg-card:hover{
-transform:scale(1.02);
-}
-
-
-.reg-card img{
-    width:100%;
-    height:200px;
-    object-fit:cover;
-}
-
-.reg-card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 0 20px rgba(225,6,0,0.5);
-}
-
-.reg-card h3{
-    margin-top:10px;
-}
-.nuove-sezioni{
-width:90%;
-margin:40px auto;
-}
-
-.card-container{
-display:flex;
-gap:20px;
-}
-
-a{
-    text-decoration:none;
-    color:inherit;
-}
-
-a:visited{
-    color:inherit;
-}
-
-.card{
-flex:1;
-background:#161616;
-border-radius:10px;
-overflow:hidden;
-text-align:center;
-border:1px solid #333;
-transition:0.2s;
-}
-
-.card:hover{
-transform:scale(1.02);
-}
-
-.card img{
-width:100%;
-height:160px;
-object-fit:cover;
-}
-
-.card h3{
-margin:15px 0 5px 0;
-}
-
-.card p{
-font-size:14px;
-color:#ccc;
-padding:0 10px 15px 10px;
-}
-
-/* MOBILE */
-@media(max-width:800px){
-.card-container{
-flex-direction:column;
-}
-}
-
-.regolamenti-grid{
-display:grid;
-grid-template-columns: repeat(3,1fr);
-gap:25px;
-margin-top:20px;
-}
-
-.reg-card{
-position:relative;
-display:block;
-border-radius:10px;
-overflow:hidden;
-text-decoration:none;
-color:white;
-background:black;
-border:1px solid #222;
-transition:0.3s;
-}
-
-/* IMMAGINE */
-
-.reg-card img{
-width:100%;
-height:200px;
-object-fit:cover;
-filter:brightness(0.7);
-transition:0.3s;
-}
-
-/* OVERLAY SCURO */
-
-.reg-card::after{
-content:"";
-position:absolute;
-bottom:0;
-left:0;
-width:100%;
-height:100%;
-background:linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-}
-
-/* TITOLO SOPRA IMMAGINE */
-
-.reg-card h3{
-position:absolute;
-bottom:15px;
-left:15px;
-margin:0;
-z-index:2;
-font-size:18px;
-letter-spacing:1px;
-}
-
-/* HOVER RACING */
-
-.reg-card:hover{
-transform:scale(1.02);
-box-shadow:0 0 15px red;
-}
-
-.reg-card:hover img{
-transform:scale(1.05);
-filter:brightness(1);
-}
-/* TITOLI RACING */
-
-.race-title{
-text-align:center;
-font-family:'Rajdhani', sans-serif;
-font-size:38px;
-letter-spacing:4px;
-margin-top:60px;
-}
-
-/* CONTENITORE EVENTO */
-
-.race-event{
-background:
-repeating-linear-gradient(45deg,#101010,#101010 8px,#0a0a0a 8px,#0a0a0a 16px);
-padding:50px;
-border-top:4px solid #e10600;
-border-bottom:4px solid #e10600;
-box-shadow:0 0 30px rgba(225,6,0,0.4);
-margin-bottom:60px;
-}
-
-/* INFO GARA */
-
-.race-info{
-text-align:center;
-margin-bottom:40px;
-font-family:'Rajdhani', sans-serif;
-letter-spacing:2px;
-}
-
-.race-info h3{
-font-size:28px;
-margin-bottom:5px;
-}
-
-.race-info p{
-opacity:0.7;
-}
-
-/* PODIO */
-
-.podium-live{
-display:flex;
-justify-content:center;
-align-items:flex-end;
-gap:30px;
-}
-
-.podium-slot{
-background:linear-gradient(180deg,#1c1c1c,#111);
-width:190px;
-text-align:center;
-border-radius:8px;
-position:relative;
-box-shadow:0 0 20px rgba(0,0,0,0.6);
-animation: podiumAppear 0.9s ease;
-}
-
-/* BANDIERA */
-
-.flag{
-width:70px;
-margin-top:15px;
-border-radius:3px;
-box-shadow:0 0 10px rgba(0,0,0,0.8);
-}
-
-/* ALTEZZE */
-
-.first{height:280px;border-top:6px solid gold;}
-.second{height:220px;border-top:6px solid silver;}
-.third{height:200px;border-top:6px solid #cd7f32;}
-
-/* POSIZIONE */
-
-.pos{
-font-size:70px;
-font-family:'Rajdhani', sans-serif;
-font-weight:700;
-margin-top:10px;
-}
-
-/* NOME PILOTA */
-
-.driver{
-margin-top:20px;
-font-family:'Rajdhani', sans-serif;
-font-size:20px;
-letter-spacing:1px;
-}
-
-/* ANIMAZIONE */
-
-@keyframes podiumAppear{
-from{transform:translateY(60px);opacity:0;}
-to{transform:translateY(0);opacity:1;}
-}
-
-
-</style>
+      animation: moveBg 20s linear infinite;
+    }
+
+    @keyframes moveBg{
+      from{ background-position:0 0; }
+      to{ background-position:400px 0; }
+    }
+
+    /* HEADER */
+    header{
+      background:#111;
+      text-align:center;
+      padding:0;
+      border-bottom:2px solid #e10600;
+    }
+
+    .main-banner{
+      position:relative;
+      width:100%;
+      height:625px;
+      background-image:url("banner-gt7.jpg");
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+      border-bottom:2px solid #e10600;
+      overflow:hidden;
+    }
+
+    /* LOGO (UNA SOLA DEFINIZIONE) */
+    .logo{
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      width:700px;
+      max-width:90%;
+      z-index:2;
+      filter: drop-shadow(0 0 25px rgba(225,6,0,0.9));
+      pointer-events:none;
+      user-select:none;
+    }
+
+    .banner-overlay{
+      position:absolute;
+      width:100%;
+      height:100%;
+      background:linear-gradient(90deg, transparent, rgba(225,6,0,0.25), transparent);
+      animation:bannerMove 6s linear infinite;
+    }
+
+    .banner-glow{
+      position:absolute;
+      bottom:0;
+      width:100%;
+      height:120px;
+      background:linear-gradient(180deg, transparent, rgba(225,6,0,0.35));
+    }
+
+    @keyframes bannerMove{
+      0%{transform:translateX(-100%);}
+      100%{transform:translateX(100%);}
+    }
+
+    .animated-line{
+      height:6px;
+      background:linear-gradient(90deg,#111,#e10600,#111);
+    }
+
+    /* NAV */
+    nav{
+      background:#000;
+      padding:15px;
+      text-align:center;
+    }
+
+    nav a{
+      color:white;
+      margin:0 20px;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    nav a:hover{
+      color:#e10600;
+    }
+
+    /* HERO */
+    .hero{
+      text-align:center;
+      padding:60px 20px;
+      background:linear-gradient(180deg, rgba(0,0,0,0.85), #0b0b0b);
+      border-bottom:1px solid #e10600;
+    }
+
+    .hero h1{
+      font-family: 'Rajdhani', sans-serif;
+      font-size:72px;
+      font-weight:700;
+      letter-spacing:4px;
+      margin:0;
+      text-transform:uppercase;
+    }
+
+    .hero p{
+      font-family: 'Rajdhani', sans-serif;
+      font-size:18px;
+      letter-spacing:2px;
+      opacity:0.7;
+      margin-top:10px;
+    }
+
+    .hero-stats{
+      display:flex;
+      justify-content:center;
+      gap:40px;
+      margin-top:25px;
+      font-weight:bold;
+    }
+
+    .hero-stats div{
+      background:#1a1a1a;
+      padding:10px 20px;
+      border-radius:6px;
+      border:1px solid #e10600;
+      font-family: 'Rajdhani', sans-serif;
+      font-size:20px;
+    }
+
+    /* BANNER LIVE */
+    .live-banner{
+      background:linear-gradient(90deg,#7a0000,#e10600,#7a0000);
+      padding:16px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:14px;
+      font-weight:bold;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      box-shadow:0 0 20px rgba(225,6,0,0.7);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .live-banner::after{
+      content:"";
+      position:absolute;
+      top:0;
+      left:-200px;
+      width:200px;
+      height:100%;
+      background:linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      animation:scanLive 3s linear infinite;
+    }
+
+    @keyframes scanLive{
+      0%{ left:-200px; }
+      100%{ left:100%; }
+    }
+
+    .live-dot{
+      width:10px;
+      height:10px;
+      background:white;
+      border-radius:50%;
+      animation:blink 1s infinite;
+    }
+
+    @keyframes blink{
+      0%{opacity:1;}
+      50%{opacity:0.2;}
+      100%{opacity:1;}
+    }
+
+    /* SEZIONI */
+    .section{
+      padding:60px 10%;
+    }
+
+    h2{
+      margin-bottom:20px;
+    }
+
+    /* REGOLAMENTI GRID */
+    .regolamenti-grid{
+      display:grid;
+      grid-template-columns: repeat(3,1fr);
+      gap:25px;
+      margin-top:20px;
+    }
+
+    .reg-card{
+      position:relative;
+      display:block;
+      border-radius:10px;
+      overflow:hidden;
+      text-decoration:none;
+      color:white;
+      background:black;
+      border:1px solid #222;
+      transition:0.3s;
+    }
+
+    .reg-card img{
+      width:100%;
+      height:200px;
+      object-fit:cover;
+      filter:brightness(0.7);
+      transition:0.3s;
+    }
+
+    .reg-card::after{
+      content:"";
+      position:absolute;
+      bottom:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background:linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    }
+
+    .reg-card h3{
+      position:absolute;
+      bottom:15px;
+      left:15px;
+      margin:0;
+      z-index:2;
+      font-size:18px;
+      letter-spacing:1px;
+    }
+
+    .reg-card:hover{
+      transform:scale(1.02);
+      box-shadow:0 0 15px red;
+    }
+
+    .reg-card:hover img{
+      transform:scale(1.05);
+      filter:brightness(1);
+    }
+
+    /* NUOVE SEZIONI */
+    .nuove-sezioni{
+      width:90%;
+      margin:40px auto;
+    }
+
+    .card-container{
+      display:flex;
+      gap:20px;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    a:visited{
+      color:inherit;
+    }
+
+    .card{
+      flex:1;
+      background:#161616;
+      border-radius:10px;
+      overflow:hidden;
+      text-align:center;
+      border:1px solid #333;
+      transition:0.2s;
+    }
+
+    .card:hover{
+      transform:scale(1.02);
+    }
+
+    .card img{
+      width:100%;
+      height:160px;
+      object-fit:cover;
+    }
+
+    .card h3{
+      margin:15px 0 5px 0;
+    }
+
+    .card p{
+      font-size:14px;
+      color:#ccc;
+      padding:0 10px 15px 10px;
+    }
+
+    @media(max-width:800px){
+      .card-container{
+        flex-direction:column;
+      }
+      .hero h1{
+        font-size:46px;
+      }
+      .hero-stats{
+        flex-direction:column;
+        gap:12px;
+        align-items:center;
+      }
+      .logo{
+        width:90%;
+      }
+    }
+
+    /* ULTIMA GARA */
+    .race-title{
+      text-align:center;
+      font-family:'Rajdhani', sans-serif;
+      font-size:38px;
+      letter-spacing:4px;
+      margin-top:60px;
+    }
+
+    .race-event{
+      background:
+        repeating-linear-gradient(45deg,#101010,#101010 8px,#0a0a0a 8px,#0a0a0a 16px);
+      padding:50px;
+      border-top:4px solid #e10600;
+      border-bottom:4px solid #e10600;
+      box-shadow:0 0 30px rgba(225,6,0,0.4);
+      margin-bottom:60px;
+    }
+
+    .race-info{
+      text-align:center;
+      margin-bottom:40px;
+      font-family:'Rajdhani', sans-serif;
+      letter-spacing:2px;
+    }
+
+    .race-info h3{
+      font-size:28px;
+      margin-bottom:5px;
+    }
+
+    .race-info p{
+      opacity:0.7;
+    }
+
+    .podium-live{
+      display:flex;
+      justify-content:center;
+      align-items:flex-end;
+      gap:30px;
+    }
+
+    .podium-slot{
+      background:linear-gradient(180deg,#1c1c1c,#111);
+      width:190px;
+      text-align:center;
+      border-radius:8px;
+      position:relative;
+      box-shadow:0 0 20px rgba(0,0,0,0.6);
+      animation: podiumAppear 0.9s ease;
+    }
+
+    .flag{
+      width:70px;
+      margin-top:15px;
+      border-radius:3px;
+      box-shadow:0 0 10px rgba(0,0,0,0.8);
+    }
+
+    .first{height:280px;border-top:6px solid gold;}
+    .second{height:220px;border-top:6px solid silver;}
+    .third{height:200px;border-top:6px solid #cd7f32;}
+
+    .pos{
+      font-size:70px;
+      font-family:'Rajdhani', sans-serif;
+      font-weight:700;
+      margin-top:10px;
+    }
+
+    .driver{
+      margin-top:20px;
+      font-family:'Rajdhani', sans-serif;
+      font-size:20px;
+      letter-spacing:1px;
+    }
+
+    @keyframes podiumAppear{
+      from{transform:translateY(60px);opacity:0;}
+      to{transform:translateY(0);opacity:1;}
+    }
+
+    footer{
+      text-align:center;
+      padding:30px;
+      background:#000;
+      margin-top:40px;
+    }
+  </style>
 </head>
 
 <body>
-   
+
   <header class="main-banner">
     <div class="banner-overlay"></div>
+    <!-- LOGO SOPRA IL BANNER -->
+    <img class="logo" src="immagini/logo.png" alt="GT7 PAD LEAGUE">
     <div class="banner-glow"></div>
-</header>
+  </header>
 
-
-
-
-
-
-
-
-
-
-<section class="hero">
+  <section class="hero">
     <h1>IL 1° PORTALE ITALIANO DI SIM RACING</h1>
     <p>Stagione 2026 — Campionato SimRacing</p>
     <div class="hero-stats">
-        <div>174.293 Drivers</div>
-        <div>54 Campionati</div>
-        <div>9 Divisioni</div>
+      <div>174.293 Drivers</div>
+      <div>54 Campionati</div>
+      <div>9 Divisioni</div>
     </div>
-</section>
+  </section>
 
-<div class="animated-line"></div>
+  <div class="animated-line"></div>
 
-<nav>
+  <nav>
     <a href="campionati-ufficiali.html">Campionati Ufficiali</a>
-
     <a href="campionati-community.html">Campionati Minori</a>
-
     <a href="ALBODORO1.html">Albo d'oro</a>
-
     <a href="calendario.html">Calendario Eventi</a>
-
     <a href="divisioni.html">Divisioni</a>
-</nav>
+  </nav>
 
-<!-- BANNER LIVE ORA È NEL POSTO GIUSTO -->
-<div class="live-banner">
+  <div class="live-banner">
     <div class="live-dot"></div>
     PROSSIMA GARA LIVE TRA:
     <span id="countdown"></span>
-</div>
+  </div>
 
+  <div class="section">
+    <h2>Regolamenti & Campionati</h2>
 
-
-<div class="section">
-    <div class="section">
-
-<h2>Regolamenti & Campionati</h2>
-
-<div class="regolamenti-grid">
-
-    <a href="regolamento.html" class="reg-card">
-        <img src="regolamento1.jpg">
+    <div class="regolamenti-grid">
+      <a href="regolamento.html" class="reg-card">
+        <img src="regolamento1.jpg" alt="Regolamento">
         <h3>Regolamento Ufficiale GT7 PAD LEAGUE</h3>
-    </a>
+      </a>
 
-    <a href="campionato2026.html" class="reg-card">
-        <img src="regolamento2.jpg">
+      <a href="campionato2026.html" class="reg-card">
+        <img src="regolamento2.jpg" alt="Campionato Italiano 2026">
         <h3>Campionato Italiano 2026</h3>
-    </a>
+      </a>
 
-    <a href="campionati\world-cup.html" class="reg-card">
-        <img src="regolamento3.jpg">
+      <!-- FIX: slash corretto -->
+      <a href="campionati/world-cup.html" class="reg-card">
+        <img src="regolamento3.jpg" alt="World Cup">
         <h3>World Cup GT7</h3>
-    </a>
-
-</div>
-<section class="nuove-sezioni">
-    <div class="card-container">
-
-        <div class="card">  <a href="time-trial.html">
-            <img src="immagini/tt-time-trial.jpg" alt="TT Time Trial">
-            <h3>TT - Time Trial</h3>
-            <p>Classifiche ufficiali Time Trial della community con aggiornamenti costanti.</p>
-        </div>
-    </a>
-
-        <div class="card">
-            <img src="immagini/flash-news.jpg" alt="Flash News">
-            <h3>Flash News</h3>
-            <p>Ultimo minuto su eventi, risultati e comunicazioni importanti.</p>
-        </div>
-
-        <div class="card">
-            <img src="immagini/squadra-corse.jpg" alt="La nostra squadra corse">
-            <h3>La nostra squadra corse</h3>
-            <p>Scopri i piloti ufficiali e i progetti competitivi della community.</p>
-        </div>
-
+      </a>
     </div>
-</section>
 
-</div>
+    <section class="nuove-sezioni">
+      <div class="card-container">
 
-</div>
+        <!-- FIX: <a> deve avvolgere TUTTA la card -->
+        <a class="card" href="time-trial.html">
+          <img src="immagini/tt-time-trial.jpg" alt="TT Time Trial">
+          <h3>TT - Time Trial</h3>
+          <p>Classifiche ufficiali Time Trial della community con aggiornamenti costanti.</p>
+        </a>
 
+        <div class="card">
+          <img src="immagini/flash-news.jpg" alt="Flash News">
+          <h3>Flash News</h3>
+          <p>Ultimo minuto su eventi, risultati e comunicazioni importanti.</p>
+        </div>
 
+        <div class="card">
+          <img src="immagini/squadra-corse.jpg" alt="La nostra squadra corse">
+          <h3>La nostra squadra corse</h3>
+          <p>Scopri i piloti ufficiali e i progetti competitivi della community.</p>
+        </div>
 
-</div>
+      </div>
+    </section>
+  </div>
 
+  <h2 class="race-title">ULTIMA GARA DISPUTATA</h2>
 
-<h2 class="race-title">ULTIMA GARA DISPUTATA</h2>
-
-<div class="race-event">
-
+  <div class="race-event">
     <div class="race-info">
-        <h3>MONZA — ROUND 1</h3>
-        <p>15 FEBBRAIO — GARA SPRINT</p>
+      <h3>MONZA — ROUND 1</h3>
+      <p>15 FEBBRAIO — GARA SPRINT</p>
     </div>
 
     <div class="podium-live">
+      <div class="podium-slot second">
+        <img class="flag" src="https://flagcdn.com/w80/it.png" alt="Italia">
+        <div class="pos">2</div>
+        <div class="driver">SpeedRacer</div>
+      </div>
 
-        <div class="podium-slot second">
-            <img class="flag" src="https://flagcdn.com/w80/it.png">
-            <div class="pos">2</div>
-            <div class="driver">SpeedRacer</div>
-        </div>
+      <div class="podium-slot first">
+        <img class="flag" src="https://flagcdn.com/w80/fr.png" alt="Francia">
+        <div class="pos">1</div>
+        <div class="driver">DriverPSN</div>
+      </div>
 
-        <div class="podium-slot first">
-            <img class="flag" src="https://flagcdn.com/w80/fr.png">
-            <div class="pos">1</div>
-            <div class="driver">DriverPSN</div>
-        </div>
-
-        <div class="podium-slot third">
-            <img class="flag" src="https://flagcdn.com/w80/es.png">
-            <div class="pos">3</div>
-            <div class="driver">PadMaster</div>
-        </div>
-
+      <div class="podium-slot third">
+        <img class="flag" src="https://flagcdn.com/w80/es.png" alt="Spagna">
+        <div class="pos">3</div>
+        <div class="driver">PadMaster</div>
+      </div>
     </div>
+  </div>
 
-</div>
+  <script>
+    const raceDate = new Date("Feb 22, 2026 21:30:00").getTime();
 
+    setInterval(function() {
+      let now = new Date().getTime();
+      let distance = raceDate - now;
 
-    </div>
+      let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-</div>
-
-</div>
-<script>
-const raceDate = new Date("Feb 22, 2026 21:30:00").getTime();
-
-setInterval(function() {
-
-let now = new Date().getTime();
-let distance = raceDate - now;
-
-let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-document.getElementById("countdown").innerHTML =
-days + "g " + hours + "h " + minutes + "m " + seconds + "s ";
-
-}, 1000);
-</script>
-
+      document.getElementById("countdown").innerHTML =
+        days + "g " + hours + "h " + minutes + "m " + seconds + "s ";
+    }, 1000);
+  </script>
 
 </body>
 </html>
+
+
