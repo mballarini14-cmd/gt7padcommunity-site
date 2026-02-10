@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Categoria PRO</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+margin:0;
+font-family:Orbitron;
+background:#0a0a0a;
+color:white;
+}
+
+/* HERO */
+.hero{
+background:linear-gradient(180deg,#000000,#1a0000);
+padding:60px;
+text-align:center;
+border-bottom:3px solid #ff1e1e;
+}
+
+.hero h1{
+font-size:55px;
+letter-spacing:4px;
+color:#ff1e1e;
+margin:0;
+}
+
+.hero p{
+color:#ccc;
+margin-top:10px;
+}
+
+/* STAT BAR */
+.statbar{
+display:flex;
+justify-content:center;
+gap:50px;
+padding:20px;
+background:#111;
+border-bottom:1px solid #222;
+}
+
+.stat h2{
+margin:0;
+color:#ff1e1e;
+}
+
+/* SEARCH */
+.searchbox{
+text-align:center;
+margin:30px;
+}
+
+.searchbox input{
+padding:10px;
+width:300px;
+background:#111;
+border:1px solid #333;
+color:white;
+border-radius:5px;
+}
+
+/* GRID */
+.container{
+padding:40px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(4,1fr); /* 4 colonne fisse */
+gap:25px;
+}
+
+/* DRIVER CARD */
+.driver{
+background:linear-gradient(145deg,#111,#000);
+border:1px solid #330000;
+border-radius:15px;
+padding:25px 20px;
+text-align:center;
+transition:0.3s;
+position:relative;
+}
+
+.driver:hover{
+transform:scale(1.05);
+box-shadow:0 0 25px #ff1e1e66;
+}
+
+.badge{
+position:absolute;
+top:10px;
+right:10px;
+background:#ff1e1e;
+padding:3px 8px;
+font-size:10px;
+border-radius:3px;
+}
+
+.driver a{
+text-decoration:none;
+color:white;
+font-size:20px;
+display:block;
+margin-top:10px;
+}
+
+.flag img{
+width:28px;
+height:18px;
+border-radius:2px;
+margin-top:8px;
+}
+
+
+
+.rank{
+color:#ff1e1e;
+font-size:12px;
+margin-top:8px;
+}
+
+/* SKILL BAR */
+.skillbar{
+background:#222;
+height:6px;
+border-radius:5px;
+margin-top:12px;
+}
+
+.skill{
+background:#ff1e1e;
+height:6px;
+border-radius:5px;
+}
+
+/* FOOTER */
+.footer{
+text-align:center;
+padding:20px;
+color:#555;
+}
+</style>
+
+<script>
+function searchDriver(){
+let input=document.getElementById("search").value.toLowerCase();
+let cards=document.getElementsByClassName("driver");
+
+for(let i=0;i<cards.length;i++){
+let name=cards[i].innerText.toLowerCase();
+cards[i].style.display=name.includes(input)?"block":"none";
+}
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="hero">
+<h1>CATEGORIA PRO</h1>
+<p>I 20 MIGLIORI PILOTI DEL MONDO</p>
+</div>
+
+<div class="statbar">
+<div class="stat"><h2>20</h2>Piloti Elite</div>
+<div class="stat"><h2>PRO</h2>Top Split</div>
+<div class="stat"><h2>World Level</h2>Competizione</div>
+</div>
+
+<div class="searchbox">
+<input type="text" id="search" onkeyup="searchDriver()" placeholder="Cerca Pilota">
+</div>
+
+<section class="pro-drivers">
+  <h2>Top 20 Pro Drivers</h2>
+
+  <div class="drivers-grid">
+
+    <!-- DRIVER CARD -->
+    <div class="driver">
+      <div class="driver-name">
+        <img src="https://flagcdn.com/w40/us.png"> Predator
+      </div>
+      <div class="rating-bar"><span style="width:100%"></span></div>
+    </div>
+
+    <div class="driver">
+      <div class="driver-name">
+        <img src="https://flagcdn.com/w40/pl.png"> Xx_Anonymus_xX
+      </div>
+      <div class="rating-bar"><span style="width:97%"></span></div>
+    </div>
+
+    <div class="driver">
+      <div class="driver-name">
+        <img src="https://flagcdn.com/w40/pt.png"> Kaito_Ren-98
+      </div>
+      <div class="rating-bar"><span style="width:96%"></span></div>
+    </div>
+
+    <div class="driver">
+      <div class="driver-name">
+        <img src="https://flagcdn.com/w40/gb.png"> Topdriver1998
+      </div>
+      <div class="rating-bar"><span style="width:95%"></span></div>
+    </div>
+
+    <div class="driver">
+      <div class="driver-name">
+        <img src="https://flagcdn.com/w40/se.png"> Octagon10
+      </div>
+      <div class="rating-bar"><span style="width:93%"></span></div>
+    </div>
+
+    <div class="driver">
+      <div class="driver-name">
+        <img src="https://flagcdn.com/w40/br.png"> Pbonelli
+      </div>
+      <div class="rating-bar"><span style="width:88%"></span></div>
+    </div>
+
+    <div class="driver">
+      <div class="driver-name">
+        <img src="https://flagcdn.com/w40/ch.png"> Zylux
+      </div>
+      <div class="rating-bar"><span style="width:88%"></span></div>
+    </div>
+
+    <div class="driver">
+      <div class="driver-name">
+        <img src="https://flagcdn.com/w40/hu.png"> Williams_Fuvaros
+      </div>
+      <div class="rating-bar"><span style="width:86%"></span></div>
+    </div>
+
+    <div class="driver">
+      <div class="driver-name">
+        <img src="https://flagcdn.com/w40/ch.png"> Tx3_aura
+      </div>
+      <div class="rating-bar"><span style="width:85%"></span></div>
+    </div>
+
+    <div class="driver">
+      <div class="driver-name">
+        <img src="https://flagcdn.com/w40/ch.png"> Ste_fan
+      </div>
+      <div class="rating-bar"><span style="width:84%"></span></div>
+    </div>
+
+    <div class="driver">
+      <div class="driver-name">
+        <img src="https://flagcdn.com/w40/de.png"> ERT_Bellin
+      </div>
+      <div class="rating-bar"><span style="width:84%"></span></div>
+    </div>
+
+    <div class="driver">
+      <div class="driver-name">
+        <img src="https://flagcdn.com/w40/gr.png"> UYU_Mammal
+      </div>
+      <div class="rating-bar"><span style="width:82%"></span></div>
+    </div>
+
+    <div class="driver">
+      <div class="driver-name">
+        <img src="https://flagcdn.com/w40/jp.png"> Louis_miguel
+      </div>
+      <div class="rating-bar"><span style="width:81%"></span></div>
+    </div>
+
+    <div class="driver">
+      <div class="driver-name">
+        <img src="https://flagcdn.com/w40/gb.png"> Never_lose
+      </div>
+      <div class="rating-bar"><span style="width:81%"></span></div>
+    </div>
+
+    <div class="driver">
+      <div class="driver-name">
+        <img src="https://flagcdn.com/w40/es.png"> ArdenBlue
+      </div>
+      <div class="rating-bar"><span style="width:80%"></span></div>
+    </div>
+
+    <div class="driver">
+      <div class="driver-name">
+        <img src="https://flagcdn.com/w40/fr.png"> Yinato
+      </div>
+      <div class="rating-bar"><span style="width:80%"></span></div>
+    </div>
+
+    <div class="driver">
+      <div class="driver-name">
+        <img src="https://flagcdn.com/w40/be.png"> Koolsa
+      </div>
+      <div class="rating-bar"><span style="width:80%"></span></div>
+    </div>
+
+    <div class="driver">
+      <div class="driver-name">
+        <img src="https://flagcdn.com/w40/cn.png"> Bao_71ch
+      </div>
+      <div class="rating-bar"><span style="width:79%"></span></div>
+    </div>
+
+    <div class="driver">
+      <div class="driver-name">
+        <img src="https://flagcdn.com/w40/au.png"> Casey_27
+      </div>
+      <div class="rating-bar"><span style="width:78%"></span></div>
+    </div>
+
+    <div class="driver">
+      <div class="driver-name">
+        <img src="https://flagcdn.com/w40/it.png"> Mrbobta
+      </div>
+      <div class="rating-bar"><span style="width:77%"></span></div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+.pro-drivers {
+  background:#0a0a0a;
+  padding:40px;
+  color:white;
+}
+
+.pro-drivers h2 {
+  color:#ff1e00;
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.drivers-grid {
+  display:grid;
+  grid-template-columns: repeat(5,1fr);
+  gap:20px;
+}
+
+.driver {
+  background:#111;
+  border:1px solid #222;
+  padding:10px;
+}
+
+.driver-name {
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-weight:bold;
+}
+
+.driver-name img {
+  width:24px;
+}
+
+.rating-bar {
+  background:#222;
+  height:6px;
+  margin-top:8px;
+}
+
+.rating-bar span {
+  display:block;
+  height:6px;
+  background:#ff1e00;
+}
+</style>
+
+
+<div class="footer">
+RaceSportGP — Elite PRO Drivers
+</div>
+
+</body>
+</html>
+

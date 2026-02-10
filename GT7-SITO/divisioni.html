@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GT7 PAD LEAGUE | Divisioni</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Orbitron', sans-serif;
+color:white;
+background:url("https://www.transparenttextures.com/patterns/carbon-fibre.png"), #05070b;
+}
+
+/* BARRA ROSSA ANIMATA */
+
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:-50%;
+width:200%;
+height:5px;
+background:linear-gradient(90deg,transparent,#ff0000,transparent);
+animation:ledmove 3s linear infinite;
+}
+
+@keyframes ledmove{
+from{left:-50%}
+to{left:100%}
+}
+
+header{
+text-align:center;
+padding:40px;
+}
+
+h1{
+font-size:44px;
+letter-spacing:6px;
+}
+
+.container{
+width:90%;
+margin:auto;
+}
+
+.divisions{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+@media(max-width:900px){
+.divisions{grid-template-columns:repeat(2,1fr);}
+}
+
+@media(max-width:600px){
+.divisions{grid-template-columns:1fr;}
+}
+
+.card{
+padding:40px;
+border-radius:18px;
+text-align:center;
+background:rgba(0,0,0,0.6);
+background-image:url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+border:1px solid #222;
+transition:.3s;
+text-decoration:none;
+color:white;
+position:relative;
+overflow:hidden;
+}
+
+.card:hover{
+transform:translateY(-5px) scale(1.02);
+box-shadow:0 0 25px rgba(255,0,0,0.6);
+}
+
+.rank{
+font-size:38px;
+letter-spacing:4px;
+}
+
+.desc{
+font-size:14px;
+opacity:.7;
+margin-top:10px;
+}
+
+/* SPECIAL */
+
+.legend{
+background:linear-gradient(45deg,#FFD700,#a07a00);
+color:black;
+}
+
+.pro{
+background:linear-gradient(45deg,#C0C0C0,#6f6f6f);
+color:black;
+}
+
+.s{
+background:linear-gradient(45deg,#cd7f32,#6e3c12);
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>DIVISIONI UFFICIALI</h1>
+</header>
+
+<div class="container">
+
+<div class="divisions">
+
+<a class="card legend" href="legend.html">
+<div class="rank">LEGEND</div>
+<div class="desc">Elite mondiale</div>
+</a>
+
+<a class="card pro" href="pro.html">
+<div class="rank">PRO</div>
+<div class="desc">Top Drivers</div>
+</a>
+
+<a class="card s" href="s.html">
+<div class="rank">S</div>
+<div class="desc">Altissimo livello</div>
+</a>
+
+<a class="card" href="aplus.html">
+<div class="rank">A+</div>
+<div class="desc">Competitivo</div>
+</a>
+
+<a class="card" href="a.html">
+<div class="rank">A</div>
+<div class="desc">Alto livello</div>
+</a>
+
+<a class="card" href="b.html">
+<div class="rank">B</div>
+<div class="desc">Qualificazioni ITA</div>
+</a>
+
+<a class="card" href="c.html">
+<div class="rank">C</div>
+<div class="desc">Intermedio</div>
+</a>
+
+<a class="card" href="d.html">
+<div class="rank">D</div>
+<div class="desc">Entry</div>
+</a>
+
+<a class="card" href="e.html">
+<div class="rank">E</div>
+<div class="desc">Rookie</div>
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
+
+

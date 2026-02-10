@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GT7 PAD LEAGUE - Ranking Globale</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background-color:#0b0b0b;
+    color:white;
+    margin:0;
+}
+
+header{
+    background:#111;
+    padding:20px;
+    text-align:center;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.container{
+    width:95%;
+    margin:auto;
+    margin-top:30px;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:#151515;
+}
+
+th, td{
+    padding:10px;
+    text-align:center;
+}
+
+th{
+    background:#222;
+}
+
+tr:nth-child(even){
+    background:#1c1c1c;
+}
+
+tr:hover{
+    background:#2a2a2a;
+}
+
+.flag{
+    width:22px;
+    vertical-align:middle;
+    margin-right:6px;
+}
+</style>
+</head>
+
+<body>
+
+<header>GT7 PAD LEAGUE — Ranking Globale</header>
+
+<div class="container">
+
+<h2>Classifica Generale Piloti</h2>
+
+<table>
+<tr>
+<th>#</th>
+<th>Pilota</th>
+<th>Nazionalità</th>
+<th>Punti</th>
+</tr>
+
+<!-- TOP 10 -->
+<tr><td>1</td><td>ShadowRacer</td><td><img class="flag" src="https://flagcdn.com/w20/it.png">Italia</td><td>982</td></tr>
+<tr><td>2</td><td>TurboGhost</td><td><img class="flag" src="https://flagcdn.com/w20/fr.png">Francia</td><td>955</td></tr>
+<tr><td>3</td><td>NeonDrift</td><td><img class="flag" src="https://flagcdn.com/w20/es.png">Spagna</td><td>941</td></tr>
+<tr><td>4</td><td>SpeedHunter</td><td><img class="flag" src="https://flagcdn.com/w20/de.png">Germania</td><td>930</td></tr>
+<tr><td>5</td><td>DarkApex</td><td><img class="flag" src="https://flagcdn.com/w20/gb.png">UK</td><td>915</td></tr>
+<tr><td>6</td><td>GTMasterX</td><td><img class="flag" src="https://flagcdn.com/w20/nl.png">Olanda</td><td>904</td></tr>
+<tr><td>7</td><td>RacingWolf</td><td><img class="flag" src="https://flagcdn.com/w20/us.png">USA</td><td>899</td></tr>
+<tr><td>8</td><td>PadLegend</td><td><img class="flag" src="https://flagcdn.com/w20/it.png">Italia</td><td>884</td></tr>
+<tr><td>9</td><td>VortexGT</td><td><img class="flag" src="https://flagcdn.com/w20/be.png">Belgio</td><td>870</td></tr>
+<tr><td>10</td><td>SlipstreamX</td><td><img class="flag" src="https://flagcdn.com/w20/pt.png">Portogallo</td><td>861</td></tr>
+
+<!-- Dal 11 al 100 (generati realistici) -->
+<script>
+const nations = [
+{code:"it",name:"Italia"},
+{code:"fr",name:"Francia"},
+{code:"es",name:"Spagna"},
+{code:"de",name:"Germania"},
+{code:"gb",name:"UK"},
+{code:"us",name:"USA"},
+{code:"nl",name:"Olanda"},
+{code:"be",name:"Belgio"}
+];
+
+const names = ["ApexHunter","SpeedCore","NitroKid","ZeroLag","OvertakeX","PadWarrior","TrackTitan","GhostLine","FastPulse","RapidGT"];
+
+let points = 850;
+
+for(let i=11;i<=100;i++){
+let nation = nations[Math.floor(Math.random()*nations.length)];
+let name = names[Math.floor(Math.random()*names.length)] + i;
+
+document.write(`
+<tr>
+<td>${i}</td>
+<td>${name}</td>
+<td><img class="flag" src="https://flagcdn.com/w20/${nation.code}.png"> ${nation.name}</td>
+<td>${points}</td>
+</tr>
+`);
+
+points -= Math.floor(Math.random()*5);
+}
+</script>
+
+</table>
+
+</div>
+
+</body>
+</html>

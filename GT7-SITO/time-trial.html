@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Time Trial</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+background:#050505;
+color:white;
+font-family:'Orbitron', sans-serif;
+}
+
+.container{
+max-width:1400px;
+margin:auto;
+padding:40px;
+}
+
+h1{
+text-align:center;
+letter-spacing:4px;
+margin-bottom:30px;
+}
+
+.main-layout{
+display:flex;
+gap:50px;
+}
+
+.table-box{
+flex:1;
+border:2px solid #e10600;
+background:#0a0a0a;
+box-shadow:0 0 15px #e1060030;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th{
+background:#e10600;
+padding:14px;
+letter-spacing:2px;
+}
+
+td{
+padding:12px;
+text-align:center;
+border-bottom:1px solid #1b1b1b;
+}
+
+tr:nth-child(even){
+background:#111;
+}
+
+tr:first-child{
+background:#1a0000;
+font-size:18px;
+}
+
+/* PODIO */
+
+.podium{
+width:420px;
+display:flex;
+align-items:flex-end;
+gap:20px;
+}
+
+.block{
+flex:1;
+border:2px solid #e10600;
+text-align:center;
+padding:15px;
+background:linear-gradient(180deg,#111,#050505);
+position:relative;
+}
+
+.block::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+right:0;
+height:6px;
+background:#e10600;
+box-shadow:0 0 10px red;
+}
+
+.first{ height:260px; }
+.second{ height:190px; }
+.third{ height:160px; }
+
+.pos-label{
+font-size:28px;
+margin-bottom:10px;
+}
+
+.driver-name{
+margin-top:20px;
+font-size:14px;
+opacity:0.9;
+}
+
+/* BOX IMMAGINI */
+
+.media-row{
+display:flex;
+gap:30px;
+margin-top:30px;
+}
+
+.media-box{
+flex:1;
+border:2px solid #e10600;
+padding:15px;
+background:#0a0a0a;
+}
+
+.media-box h3{
+margin-top:0;
+text-align:center;
+}
+
+.media-box img{
+width:100%;
+height:auto;
+display:block;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>TIME TRIAL N°3/24 1-15 FEB 2026</h1>
+
+<div class="main-layout">
+
+<div style="flex:1">
+
+<div class="table-box">
+<table>
+<thead>
+<tr>
+<th>POS</th>
+<th>PILOTA</th>
+<th>AUTO</th>
+<th>TEMPO</th>
+</tr>
+</thead>
+<tbody id="tt-body"></tbody>
+</table>
+</div>
+
+<div class="media-row">
+
+<div class="media-box">
+<h3>CIRCUIT MAP</h3>
+<img src="mappa-tt.png">
+</div>
+
+<div class="media-box">
+<h3>CAR</h3>
+<img src="auto-tt.png">
+</div>
+
+</div>
+
+</div>
+
+<div class="podium">
+
+<div class="block second">
+<div class="pos-label">P2</div>
+<div class="driver-name" id="p2">---</div>
+</div>
+
+<div class="block first">
+<div class="pos-label">P1</div>
+<div class="driver-name" id="p1">---</div>
+</div>
+
+<div class="block third">
+<div class="pos-label">P3</div>
+<div class="driver-name" id="p3">---</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function tempoToMs(t){
+if(!t) return 999999999;
+let parts = t.split(':');
+let min = parseInt(parts[0]);
+let secParts = parts[1].split('.');
+let sec = parseInt(secParts[0]);
+let ms = parseInt(secParts[1]);
+return (min*60000)+(sec*1000)+ms;
+}
+
+const tbody = document.getElementById("tt-body");
+let data = JSON.parse(localStorage.getItem("ttClassifica")) || [];
+
+data.sort((a,b)=> tempoToMs(a.tempo)-tempoToMs(b.tempo));
+
+tbody.innerHTML="";
+
+data.forEach((r,i)=>{
+tbody.innerHTML += `
+<tr>
+<td>${i+1}</td>
+<td>${r.pilota}</td>
+<td>${r.auto}</td>
+<td>${r.tempo}</td>
+</tr>
+`;
+});
+
+if(data[0]) document.getElementById("p1").innerHTML = data[0].pilota;
+if(data[1]) document.getElementById("p2").innerHTML = data[1].pilota;
+if(data[2]) document.getElementById("p3").innerHTML = data[2].pilota;
+
+</script>
+
+</body>
+</html>
+
+
+
+
+

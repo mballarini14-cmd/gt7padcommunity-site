@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TT Tool</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap" rel="stylesheet">
+
+<style>
+body{
+    background:#0b0b0b;
+    color:white;
+    font-family:'Rajdhani', sans-serif;
+    padding:40px;
+}
+
+h1{ text-align:center; }
+
+form{
+    max-width:600px;
+    margin:auto;
+}
+
+input{
+    width:100%;
+    padding:8px;
+    margin:5px 0 15px;
+}
+
+button{
+    padding:12px;
+    background:#e10600;
+    border:none;
+    color:white;
+    cursor:pointer;
+    width:100%;
+}
+</style>
+</head>
+
+<body>
+
+<h1>EDITOR TIME TRIAL</h1>
+
+<form id="ttForm"></form>
+
+<button onclick="salva()">SALVA CLASSIFICA</button>
+
+<script>
+const form = document.getElementById("ttForm");
+
+// crea 5 posizioni modificabili
+for(let i=1;i<=5;i++){
+    form.innerHTML += `
+        <h3>Posizione ${i}</h3>
+        Pilota <input id="pilota${i}">
+        Auto <input id="auto${i}">
+        Tempo <input id="tempo${i}">
+    `;
+}
+
+// carica dati esistenti
+let ttData = JSON.parse(localStorage.getItem("ttClassifica")) || [];
+
+ttData.forEach((row,i)=>{
+    document.getElementById("pilota"+(i+1)).value=row.pilota;
+    document.getElementById("auto"+(i+1)).value=row.auto;
+    document.getElementById("tempo"+(i+1)).value=row.tempo;
+});
+
+function salva(){
+
+    let nuovaClassifica=[];
+
+    for(let i=1;i<=5;i++){
+        nuovaClassifica.push({
+            pos:i,
+            pilota:document.getElementById("pilota"+i).value,
+            auto:document.getElementById("auto"+i).value,
+            tempo:document.getElementById("tempo"+i).value
+        });
+    }
+
+    localStorage.setItem("ttClassifica", JSON.stringify(nuovaClassifica));
+
+    alert("SALVATO!");
+
+}
+</script>
+
+</body>
+</html>
+
